@@ -1,11 +1,10 @@
-import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
+/* eslint-disable camelcase */
+import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm'
 
+import { v4 as uuid } from 'uuid'
 
-import { v4 as uuid } from "uuid"
-
-@Entity("tags")
+@Entity('tags')
 class Tag {
-
   @PrimaryColumn()
   readonly id: string;
 
@@ -20,10 +19,9 @@ class Tag {
 
   constructor() {
     if (!this.id) {
-      this.id = uuid();
+      this.id = uuid()
     }
   }
-
 }
 
 export { Tag }
